@@ -125,3 +125,54 @@ i**2 是表达式,for i in range(1,6)为取值,判断条件可以省略
 aList = [i for i in range(10) if i % 3 == 0]
 print(aList)
 
+alist = [[0]]*3
+#[[0],[0],[0]]
+alist[0][0] = 'hello'
+# alist=[[0]]*3
+# [[0], [0], [0]]
+# [id(i) for i in alist]
+# [52273480, 52273480, 52273480]
+# [['hello'],['hello'],['hello']]
+
+# blist=[0]
+# alist = [blist for i in range(3)]
+# alist
+# [[0], [0], [0]]
+# blist = ['hello']
+# blist
+# ['hello']
+# alist
+# [[0], [0], [0]]
+#
+# alist
+# [[0], [1], [3]]
+# blist
+# [[0], [1], [3]]
+# alist[2]='hello'
+# id(alist),id(blist)
+# (52783816, 52783816)
+# alist,blist
+# ([[0], [1], 'hello'], [[0], [1], 'hello'])
+# import copy
+# alist=[[0],[1],[2]]
+# blist=alist
+# blist=copy.copy(alist)
+# clist=alist
+# alist,blist,clist
+# ([[0], [1], [2]], [[0], [1], [2]], [[0], [1], [2]])
+# alist[0]='hello'
+# alist,blist,clist
+# (['hello', [1], [2]], [[0], [1], [2]], ['hello', [1], [2]])
+# dlist=copy.deepcopy(alist)
+# alist,blist,clist,dlist
+# (['hello', [1], [2]], [[0], [1], [2]], ['hello', [1], [2]], ['hello', [1], [2]])
+# alist[2][0]='xixi'
+# alist,blist,clist,dlist
+# (['hello', [1], ['xixi']], [[0], [1], ['xixi']], ['hello', [1], ['xixi']], ['hello', [1], [2]])
+
+# elist=alist[:]
+# elist=alist+[]
+# elist=alist*1
+#以上3中方式均为全拷贝 copy全拷贝,deepcopy 深拷贝
+#alist = alist+[0] ,id(alist)变, alist+=[0] ,id(alist)不变
+
