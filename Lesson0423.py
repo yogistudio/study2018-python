@@ -104,6 +104,7 @@ astr = '0123456789'
 # print(astr[2::2])
 # print(astr[::2])
 print(astr[2:8:2])
+print(astr[7:1:-2])#取值-2表示从第一个即7开始,2:8:2,表示从2开始到8,从左到右,2:8:-2
 
 # bstr='apple pear banana'
 # cstr = bstr[::-1].split()[::-1]
@@ -114,3 +115,13 @@ print(astr[2:8:2])
 # a=(0,'a',0,1)
 # print(id(a[0]))
 # print(id(a[2]))
+'''
+列表解析[i(表达式) for i in range(10)(取值) if i % 3 == 0(判断条件)]
+for i in range(1,6)
+print(i**2)
+i**2 是表达式,for i in range(1,6)为取值,判断条件可以省略
+'''
+
+aList = [i for i in range(10) if i % 3 == 0]
+print(aList)
+
