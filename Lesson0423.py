@@ -176,3 +176,50 @@ alist[0][0] = 'hello'
 #以上3中方式均为全拷贝 copy全拷贝,deepcopy 深拷贝
 #alist = alist+[0] ,id(alist)变, alist+=[0] ,id(alist)不变
 
+#集合set:不可重复,不能有可变对象,方法改变本身,运算生成新对象,还有不可变集合
+
+astr = 'abcdaaafdgrejiojkdlg'
+#第一种方法
+adict = {i:astr.count(i) for i in set(astr)}
+#注意,这种格式中可以为(),{},[],;前面为表达式,当中为取值,最后为条件
+print(adict)
+#第二种方法
+for i in set(astr):
+    print(i,astr.count(i))
+#第三种方法,一下为简化过程
+adict = {}
+for i in astr:
+    if i not in adict:
+        adict[i] = 1
+    else:
+        adict[i] += 1
+print(adict)
+#||可以简化为
+adict = {}
+for i in astr:
+    if i not in adict:
+        adict[i] = 0
+    adict[i] += 1
+print(adict)
+#||继续简化为
+adict = {}
+for i in astr:
+    adict.setdefault(i, 0)
+    adict[i] += 1
+print(adict)
+#||或者简化为
+for i in astr:
+    adict[i] = adict.get(i, 0) + 1
+print(adict)
+#第四种方法
+from collections import Counter
+adict = Counter(astr)
+print(adict)
+x,y=3,5
+43 if x>y else 32
+
+# while 和 for 都可以带else
+import sys
+alist = sys.argv[1:]
+alist = [int(i) for i in alist]
+print(sum(alist))
