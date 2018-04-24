@@ -223,3 +223,54 @@ import sys
 alist = sys.argv[1:]
 alist = [int(i) for i in alist]
 print(sum(alist))
+
+
+# 文件读取
+# for i in open(r'test.txt'):
+#     print(i, end='')#end表示不要回车换行
+#     print(i.split(), len(i.split()))
+# alist = [len(i.split()) for i in open(r'test.txt')]
+# # 生成器
+# alist = (len(i.split()) for i in open(r'test.txt'))
+# 将[更改为(,就是生成器,表示不要一次生成所有数据,可以每次生成处理的一部分,处理完成后生成下移部分
+
+# import sys
+# sys.stdin -input  fileno 0
+# sys.stdout -output  file no 1
+# sys.stderr  fileno 2
+
+#一个变量要么是global,要么是local,不能,如果函数中有赋值,那就是local变量
+
+# def addN(n):
+#     def add(x):
+#         return x+n
+#     return add
+# add3 = addN(3)#3是n
+# add4 = addN(4)#4是n
+#
+# print(add3(42))#42是x
+# print(add4(25))#25是x
+
+import time
+# def log(msg,ts=time.time()):#默认参数在定义的时候就已经确定
+#     print('[%s]:%s' % (ts, msg))
+# log('hello')
+# log('hello', time.time()+100)
+
+def log(msg,ts=None):#默认参数在定义的时候就已经确定
+    if ts == None:
+        ts = time.time()
+    print('[% .20f]:%s' % (ts, msg))
+log('hello')
+time.sleep(2)
+log('hello')
+
+add = lambda x, y: x+y
+print(add(4, 5))
+
+fruit = {'apple':1.8,'banana':2.4,'mango':0.5,'aaa':3.4}
+for i in sorted(fruit, key=lambda x: fruit[x]):
+    print(i, fruit[i])
+for i in sorted(fruit):
+    print(i, fruit[i])
+
