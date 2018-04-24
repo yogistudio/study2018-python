@@ -4,20 +4,22 @@
 类对象
 """
 import time
+
+
 class Person(object):
     def __init__(self, name, birth):
         self.name = name
         self.brith = birth
 
     def greeting(self):
-        print("Hi ,I'm ",self.name)
+        print("Hi ,I'm ", self.name)
 
     def __str__(self):
         return '<Persion: %s> ' % self.name
 
     @property
     def age(self):
-        return (time.time() - self.brith)/60/24/365
+        return (time.time() - self.brith) / 60 / 24 / 365
 
 
 user1 = Person(name='User1', birth=0)
@@ -31,6 +33,8 @@ print(user2)
 print(user2.__str__())
 print(user1.age)
 print(user2.age)
+
+
 # __solt__用来绑定属性,但是仅对当前层次,不约束子类
 
 
@@ -39,7 +43,7 @@ class AddN(object):
         self.n = n
 
     def __call__(self, x):  # __call__是重载类的括号运算符
-        return x+self.n
+        return x + self.n
 
 
 add3 = AddN(3)
@@ -59,6 +63,7 @@ print(add4(40))
 # 这个函数实现的与上面类实现的相同.但是类可以修改n的取值
 
 print(Person.__base__)
+
 
 # 类的继承是广度优先的
 
@@ -84,6 +89,8 @@ print(Person.__base__)
 class Name(str):
     def getLastName(self):
         return self.split()[-1]
+
+
 # lower,len,split都在str中存在,所以可以直接继承str类,在实际应用中,最好用组合,就是第一种方式,不要用第二种继承
 
 aName = Name("John Green")
@@ -109,7 +116,6 @@ aQueue = Queue()
 aQueue.push("hello")
 aQueue.push(42)
 print(len(aQueue))
-print(aQueue.pull()) # hello
-print(aQueue.pull()) # 42
-print(aQueue.pull()) # IndexError
-
+print(aQueue.pull())  # hello
+print(aQueue.pull())  # 42
+print(aQueue.pull())  # IndexError
