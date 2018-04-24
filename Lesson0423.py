@@ -1,10 +1,12 @@
-'''
+"""
 邮校学习
 0423
 python可以在命令行直接执行 命令为 python -c "print 3*5",当中直接执行-c后面的语句
 python -m pydoc -p 1234  在本机1234端口开通pyton文档的web
 help(base64)
-'''
+"""
+
+
 import random
 
 # '''
@@ -110,7 +112,7 @@ print(astr[7:1:-2])#取值-2表示从第一个即7开始,2:8:2,表示从2开始�
 # cstr = bstr[::-1].split()[::-1]
 # print(cstr)
 
-#python对不可变对象只存储一份,如下文,元组中的0,2都是取值0,所以他们对象的地址是一致的
+#python对不可变对象只存储一份,如下文,元组中的0,2都是取值0,所以他们对象的地址是一致的,可变对象多个相同的,如果在定义时不使用乘法操作,就会定义多个
 
 # a=(0,'a',0,1)
 # print(id(a[0]))
@@ -269,8 +271,28 @@ add = lambda x, y: x+y
 print(add(4, 5))
 
 fruit = {'apple':1.8,'banana':2.4,'mango':0.5,'aaa':3.4}
-for i in sorted(fruit, key=lambda x: fruit[x]):
+for i in sorted(fruit, key=lambda x: fruit[x]):# 依照value排序
     print(i, fruit[i])
-for i in sorted(fruit):
+for i in sorted(fruit):# 依照key排序
     print(i, fruit[i])
+for i in sorted(fruit, key=lambda  x:len(x)):#依照长度排序
+    print(i,fruit[i])
 
+#alist = [[0]] * 3
+# alist[0][0] = 'hello'
+# alist
+# [['hello'], ['hello'], ['hello']]
+# templist = [0]
+# alist = [templist,templist,templist]
+# alist[0][0] = 'hello'
+# alist
+# [['hello'], ['hello'], ['hello']]
+# 如果只给一个值用*,在pvm中只定义一个值,如果使用多个,即使为相同值,也会在pvm中为多个,这样就不会吹安一个修改的情况
+# alist=[[0],[0],[0]]
+# alist[0][0]='hello'
+# alist
+# [['hello'], [0], [0]]
+# alist=[[0] for i in range(3)]
+# alist[0][0]='hello'
+# alist
+# [['hello'], [0], [0]]
