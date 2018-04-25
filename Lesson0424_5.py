@@ -41,14 +41,14 @@ for i in agen:
 
 
 # 应用场景,斐波立即数列
-def fib(n):
-    if n < 3:
-        return n
-    return fib(n - 1) + fib(n - 2)
-
-
-for i in range(10):
-    print(fib(i))
+# def fib(n):
+#     if n < 3:
+#         return n
+#     return fib(n - 1) + fib(n - 2)
+#
+#
+# for i in range(10):
+#     print(fib(i))
 
     # print(fib(40))
 
@@ -62,13 +62,13 @@ import time
 #     a, b = b, b + a
 #     time.sleep(1)
 
-# def Fib():
-#     a, b = 1, 2
-#     while True:
-#         yield a
-#         a, b = b, a + b
-#
-#
-# for i in Fib():
-#     print(i)
-#     time.sleep(1)
+def Fib():
+    a, b = 1, 2
+    while True:
+        yield a
+        a, b = b, a + b
+
+
+for i in Fib():
+    print(i)
+    time.sleep(1)
